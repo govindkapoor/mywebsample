@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Nocturne Journal is a dark, editorial blog homepage built as a static website."
+    />
+    <title>Nocturne Journal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <canvas id="starfield" aria-hidden="true"></canvas>
+    <div class="scan-ribbon" aria-hidden="true"><span></span></div>
+    <aside class="scene-hud" aria-live="polite">
+      <p class="scene-hud-kicker">Active scene</p>
+      <p class="scene-hud-title" id="scene-title">Approach</p>
+      <div class="scene-hud-track" aria-hidden="true">
+        <span id="scene-progress"></span>
+      </div>
+      <div class="scene-hud-audio">
+        <button class="audio-toggle" id="audio-toggle" type="button">Enable Audio Pulse</button>
+        <p class="audio-state" id="audio-state">Idle</p>
+      </div>
+    </aside>
+    <main class="page-shell">
+      <div class="ambient ambient-one" aria-hidden="true"></div>
+      <div class="ambient ambient-two" aria-hidden="true"></div>
+
+      <header class="topbar">
+        <a class="brand" href="#home">
+          <span class="brand-mark">N</span>
+          <span>Nocturne Journal</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="#stories">Stories</a>
+          <a href="#issue">Issue</a>
+          <a href="#lab">3D Lab</a>
+          <a href="#subscribe">Subscribe</a>
+        </nav>
+      </header>
+
+      <section class="hero scene-section" id="home" data-scene="Approach">
+        <div class="hero-rig">
+          <div class="hero-copy">
+            <p class="eyebrow">Independent editorial system</p>
+            <h1>A magazine for people who still read carefully.</h1>
+            <p class="lede">
+              Nocturne Journal is a dark, modern blog concept for long-form ideas,
+              essays, and practical publishing notes. It is designed to feel calm,
+              premium, and easy to skim without losing character.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#stories">Explore stories</a>
+              <a class="button button-secondary" href="#subscribe">Join the list</a>
+            </div>
+
+            <dl class="stats" aria-label="Site highlights">
+              <div>
+                <dt>18k</dt>
+                <dd>weekly readers</dd>
+              </div>
+              <div>
+                <dt>4</dt>
+                <dd>editorial pillars</dd>
+              </div>
+              <div>
+                <dt>1</dt>
+                <dd>clear point of view</dd>
+              </div>
+            </dl>
+          </div>
+
+          <aside class="hero-panel" aria-label="Featured issue preview">
+            <div class="hero-panel-copy">
+              <p class="panel-label">Featured issue</p>
+              <h2>Issue 08: The quiet advantage</h2>
+              <p>
+                A curated read on calmer interfaces, better rituals, and why depth
+                still wins when everything else is optimized for speed.
+              </p>
+              <div class="issue-card">
+                <span>Read time</span>
+                <strong>12 min</strong>
+              </div>
+              <div class="issue-card">
+                <span>Next drop</span>
+                <strong>Friday, 8 AM</strong>
+              </div>
+            </div>
+
+            <div class="hero-scene" aria-hidden="true">
+              <div class="hero-scene-planet"></div>
+              <div class="hero-scene-orbit orbit-a"></div>
+              <div class="hero-scene-orbit orbit-b"></div>
+              <div class="hero-scene-card scene-card-primary">
+                <span class="scene-kicker">Issue 08</span>
+                <strong>Quiet Advantage</strong>
+                <span class="scene-meta">12 min read / editorial</span>
+              </div>
+              <div class="hero-scene-card scene-card-secondary">
+                <span class="scene-kicker">Now reading</span>
+                <strong>Depth over speed</strong>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section scene-section" id="stories" data-scene="Archive">
+        <div class="section-heading">
+          <p class="eyebrow">Selected stories</p>
+          <h2>Recent writing with room to breathe.</h2>
+        </div>
+
+        <div class="story-grid">
+          <article class="story-card">
+            <p class="story-category">Essay</p>
+            <h3>The slow architecture of attention</h3>
+            <p>
+              Why the most resilient digital products feel edited, not merely
+              assembled.
+            </p>
+            <a href="#subscribe">Read more</a>
+          </article>
+
+          <article class="story-card">
+            <p class="story-category">Notes</p>
+            <h3>Designing a calmer publishing workflow</h3>
+            <p>
+              A practical look at systems that keep creative teams focused and
+              shipping.
+            </p>
+            <a href="#subscribe">Read more</a>
+          </article>
+
+          <article class="story-card">
+            <p class="story-category">Field report</p>
+            <h3>What readers return for, week after week</h3>
+            <p>
+              Consistency, specificity, and a point of view that respects the
+              audience's time.
+            </p>
+            <a href="#subscribe">Read more</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split scene-section" id="issue" data-scene="Signal">
+        <div class="section-heading narrow">
+          <p class="eyebrow">This issue</p>
+          <h2>Built around one strong reading experience.</h2>
+          <p>
+            The layout favors clear hierarchy, strong contrast, and editorial
+            pacing so the site feels like a publication, not a generic template.
+          </p>
+        </div>
+
+        <div class="issue-list" role="list" aria-label="Issue highlights">
+          <div class="issue-list-item" role="listitem">
+            <span>01</span>
+            <p>A feature essay on editorial pacing</p>
+          </div>
+          <div class="issue-list-item" role="listitem">
+            <span>02</span>
+            <p>Three tools for maintaining a lightweight publishing stack</p>
+          </div>
+          <div class="issue-list-item" role="listitem">
+            <span>03</span>
+            <p>An interview with a founder who treats writing like product design</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section lab scene-section" id="lab" data-scene="Core">
+        <div class="section-heading">
+          <p class="eyebrow">3D Lab</p>
+          <h2>An animated depth engine for the editorial brand.</h2>
+          <p>
+            This module uses true 3D transforms and rotating geometry to give
+            the site a cinematic sci-fi layer without frameworks.
+          </p>
+        </div>
+
+        <div class="lab-grid">
+          <div class="holo-stage" aria-hidden="true">
+            <div class="holo-ring ring-outer"></div>
+            <div class="holo-ring ring-inner"></div>
+            <div class="holo-cube">
+              <div class="cube-face front">Essays</div>
+              <div class="cube-face back">Systems</div>
+              <div class="cube-face right">Design</div>
+              <div class="cube-face left">Culture</div>
+              <div class="cube-face top">Signal</div>
+              <div class="cube-face bottom">Depth</div>
+            </div>
+          </div>
+
+          <div class="lab-notes">
+            <article>
+              <p class="story-category">Realtime scene</p>
+              <h3>CSS 3D cube + orbital rings</h3>
+              <p>
+                Rotating geometry gives persistent motion even before
+                interaction starts, making the hero feel alive.
+              </p>
+            </article>
+            <article>
+              <p class="story-category">Canvas atmosphere</p>
+              <h3>Parallax starfield</h3>
+              <p>
+                A lightweight particle field tracks pointer movement and adds
+                deep-space ambience behind every section.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="subscribe section scene-section" id="subscribe" data-scene="Dock">
+        <div>
+          <p class="eyebrow">Subscribe</p>
+          <h2>Get the next issue in your inbox.</h2>
+          <p>
+            A lightweight newsletter block with a built-in confirmation state so
+            the page feels finished from the start.
+          </p>
+        </div>
+
+        <form class="subscribe-form" id="subscribe-form">
+          <label class="sr-only" for="email">Email address</label>
+          <input id="email" name="email" type="email" placeholder="Email address" required />
+          <button class="button button-primary" type="submit" id="subscribe-button">
+            Subscribe
+          </button>
+          <p class="form-note" id="form-note" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <p>Nocturne Journal</p>
+        <a href="#home">Back to top</a>
+      </footer>
+    </main>
+  </body>
+</html>
